@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GTS.TodoApp.API.Controllers\GTS.TodoApp.API.Controllers.csproj" />
+    <ProjectReference Include="..\GTS.TodoApp.Core.Application\GTS.TodoApp.Core.Application.csproj" />
+    <ProjectReference Include="..\GTS.TodoApp.Infrastructure\GTS.TodoApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
