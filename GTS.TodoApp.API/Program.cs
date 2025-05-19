@@ -44,6 +44,8 @@ namespace GTS.TodoApp.API
 
             #endregion
 
+            builder.Services.AddCors();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -55,6 +57,12 @@ namespace GTS.TodoApp.API
 
             app.UseHttpsRedirection();
 
+            app.UseCors(x => x.AllowAnyHeader()
+                              .AllowAnyMethod()
+                              .AllowCredentials()
+                              .WithOrigins("http://localhost:4200", "https://localhost:4200"));
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
